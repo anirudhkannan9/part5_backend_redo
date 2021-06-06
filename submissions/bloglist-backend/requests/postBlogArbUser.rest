@@ -1,0 +1,9 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+    "title": "At this point in our implementation, an arbitrary user is assigned as a blog post's creator",
+    "author": "An author",
+    "url": "abc.com",
+    "likes": 1
+}

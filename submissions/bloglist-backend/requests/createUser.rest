@@ -1,0 +1,33 @@
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+    "notes": [],
+    "username": "kannana1",
+    "name": "Anirudh Kannan",
+    "password": "secret"
+}
+
+//created users (non-test database)
+# {
+#     "notes": [],
+#     "username": "kannana1",
+#     "name": "Anirudh Kannan",
+#     "password": "secret"
+# }
+# {
+#     "notes": [],
+#     "username": "root",
+#     "name": "Superuser",
+#     "password": "secret"
+# }
+
+//created users (test db)
+# # {
+#     "notes": [],
+#     "username: "kannana1",
+#     "name": "Anirudh Kannan",
+#     "password": "secret"
+# }
+
+//also user with username "root", password 'sekret'

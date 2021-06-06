@@ -1,0 +1,25 @@
+POST http://localhost:3003/api/login
+Content-Type: application/json
+
+{
+    "username": "kannana1",
+    "password": "secret"
+}
+
+//dev db:
+//username "kannana1" token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imthbm5hbmExIiwiaWQiOiI2MGI5M2E2ZDNkOWI3MjJkYzE3ZGNjMmMiLCJpYXQiOjE2MjI5MTM3NTd9.dAVezLzr1CjdqS9SilD1Cht4mzinYqnFA_OykBoCqtE
+//username "root" token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjYwYjkzYTRlM2Q5YjcyMmRjMTdkY2MyYiIsImlhdCI6MTYyMjkxMzczM30.NYzY6cfgCGy2-x1WMhTWWWHjY6k8ZzK5U0aMxqR6Pwk
+# {
+#     "username": "root",
+#     "password": "secret"
+# }
+# {
+#     "username": "kannana1",
+#     "password": "secret"
+# }
+
+//test db: 
+//username: root token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjYwYmE5OTZhMjAyNmQ2NjNmMjkwNjk4OSIsImlhdCI6MTYyMjkxMzYxOH0._setX1tjLzk5s4qpCzeLiu0cSP8Hvg_iT1RnrQV0g8c
+//username: kannana1 token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imthbm5hbmExIiwiaWQiOiI2MGJiYjFkNGEzZTJhZjc5YjhlM2YyMDEiLCJpYXQiOjE2MjI5MTM2NTh9.xR0R2rY83puRXkhPvIBXXyuk26Brs5cJhLDMA885GTk
+
+
