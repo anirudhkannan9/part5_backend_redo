@@ -59,28 +59,21 @@ blogsRouter.delete('/:id', userExtractor, async (request, response) => {
     }
 })
 
-blogsRouter.put('/:id', userExtractor, async (request, response) => {
+blogsRouter.put('/:id', async (request, response) => {
     const body = request.body
     const oldBlog = await Blog.findById(request.params.id)
-    const user = request.user
-    // const blogUserId = oldBlog.user.toString()
-    // const userId = user.id.toString()
     if (!oldBlog) {
-        response.sendStatus(400).end()
-    } else if (oldBlog.user.toString() === user.id.toString()) {
-        //DO NOT USE MONGOOSE SCHEMA OBJECT HERE i.e. no newBlog = new Blog({title: ...}) -- fails to update. Apparently normal JS objects are not only preferred but necessary
+        response.status(400).end()
+    } else {
         const newBlog = {
-            title: oldBlog.title, 
+            title: oldBlog.title,
             author: oldBlog.author,
-            url: oldBlog.url,
+            url: oldBlog.url, 
             likes: body.likes === undefined ? oldBlog.likes : body.likes
         }
-    
+
         const resultUpdatedBlog = await Blog.findByIdAndUpdate(request.params.id, newBlog, { new: true })
-        //output of next line doesn't change if we do response.json(resultUpdatedBlog) versus resultUpdatedBlog.toJSON(). Maybe .json(object) calls object's .toJSON() method
         response.json(resultUpdatedBlog.toJSON())
-    } else {
-        return response.status(401).json({ error: 'Blogs can only be updated by the user who created them' })
     }
 })
   
