@@ -36,15 +36,10 @@ const tokenExtractor = (request, response, next) => {
 
 const userExtractor = async (request, response, next) => {
   const decodedToken = jwt.verify(request.token, process.env.SECRET)
-  console.log('DECODED TOKEN: ', decodedToken)
-  console.log('ID REFERRED TO BY DECODED TOKEN', decodedToken.id)
-  // if (!request.token) {
-  //   return response.status(401).json({ error: 'token missing' })
-  // } else if (!decodedToken.id) {
-  //   return response.status(401).json({ error: 'token invalid' })
-  // }
+  //console.log('DECODED TOKEN: ', decodedToken)
+  //console.log('ID REFERRED TO BY DECODED TOKEN', decodedToken.id)
   request.user = await User.findById(decodedToken.id)
-  console.log('USER FOUND BY DECODED TOKEN: ', request.user)
+  //console.log('USER FOUND BY DECODED TOKEN: ', request.user)
   
   next()
 }
